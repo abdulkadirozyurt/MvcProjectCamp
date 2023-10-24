@@ -23,7 +23,7 @@ namespace Entities.Concrete
 
 
 
-        public int WriterId { get; set; }
+        public int? WriterId { get; set; }      // ? ---> nullable 
         public virtual Writer Writer { get; set; }
 
 
