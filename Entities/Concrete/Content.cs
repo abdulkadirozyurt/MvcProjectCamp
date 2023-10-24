@@ -1,17 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-public    class Content
+    public class Content
     {
-        public int Id { get; set; }
+        [Key]
+        public int ContentId { get; set; }
+        [StringLength(1000)]
         public string Text { get; set; }
+       
         public DateTime Date { get; set; }
-        // writer
-        //heading
+        
+
+
+        public int HeadingId { get; set; }
+        public virtual Heading Heading { get; set; }
+
+
+
+        public int WriterId { get; set; }
+        public virtual Writer Writer { get; set; }
+
+
     }
 }
